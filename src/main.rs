@@ -17,7 +17,7 @@ fn main () {
         .insert_resource(ClearColor(Color::rgb(0.1, 0.0, 0.15)))
         .insert_resource(AmbientLight {
             color: Color::default(),
-            brightness: 20.0,
+            brightness: 1000.0,
         })
         .add_plugins(SpaceshipPlugin)
         .add_plugins(MovementPlugin)
@@ -27,7 +27,8 @@ fn main () {
             render_creation: RenderCreation::Automatic(WgpuSettings {
             backends:Some(Backends::VULKAN),
                     ..default()
-               })
+               }),
+               synchronous_pipeline_compilation: false,
        }))
         .run();
 }
