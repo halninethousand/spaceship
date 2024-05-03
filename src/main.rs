@@ -2,6 +2,7 @@ mod debug;
 mod movement;
 mod spaceship;
 mod camera;
+mod asteroids;
 
 use bevy::prelude::*;
 use bevy::render::*;
@@ -10,6 +11,7 @@ use debug::DebugPlugin;
 use camera::CameraPlugin;
 use movement::MovementPlugin;
 use spaceship::SpaceshipPlugin;
+use asteroids::AsteroidPlugin;
 
 
 fn main () {
@@ -20,6 +22,7 @@ fn main () {
             brightness: 1000.0,
         })
         .add_plugins(SpaceshipPlugin)
+        .add_plugins(AsteroidPlugin)
         .add_plugins(MovementPlugin)
         .add_plugins(CameraPlugin)
         .add_plugins(DebugPlugin)
