@@ -3,6 +3,7 @@ mod movement;
 mod spaceship;
 mod camera;
 mod asteroids;
+mod asset_loader;
 
 use bevy::prelude::*;
 use bevy::render::*;
