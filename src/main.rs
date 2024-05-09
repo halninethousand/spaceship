@@ -5,6 +5,7 @@ mod camera;
 mod asteroids;
 mod asset_loader;
 
+use asset_loader::AssetLoaderPlugin;
 use bevy::prelude::*;
 use bevy::render::*;
 use bevy::render::settings::*;
@@ -26,10 +27,11 @@ fn main () {
         .add_plugins(AsteroidPlugin)
         .add_plugins(MovementPlugin)
         .add_plugins(CameraPlugin)
+        .add_plugins(AssetLoaderPlugin)
         .add_plugins(DebugPlugin)
 		.add_plugins(DefaultPlugins.set(RenderPlugin {
             render_creation: RenderCreation::Automatic(WgpuSettings {
-            backends:Some(Backends::VULKAN),
+            backends:Some(Backends::DX12),
                     ..default()
                }),
                synchronous_pipeline_compilation: false,
